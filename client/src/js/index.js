@@ -17,22 +17,6 @@ const loadSpinner = () => {
   main.appendChild(spinner);
 };
 
-const displayData = async () => {
-  const data = await getDb ();
-  if (data && data.length > 0) {
-    console.log('Data found', data);
-    main.innerHTML = '';
-    data.forEach((item) => {
-      const div = document.createElement('div');
-      div.textContent = item.jate;
-      main.appendChild(div);
-    });
-  } else {
-    main.textContent = 'No data found'; // Display message if no data
-  }
-};
-
-displayData();
 const editor = new Editor();
 
 if (typeof editor === 'undefined') {
